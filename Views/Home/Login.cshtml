@@ -1,0 +1,24 @@
+﻿@model Metrosoft.ViewModel.Login
+
+@{
+    ViewData["Title"] = "Register Page";
+}
+
+<div class="Login text-center">
+     <h1 class="display-4">Login User Page</h1>
+    @if(ViewBag.SuccessRegisterMsg != "")
+    {
+        <div class="">@ViewBag.SuccessRegisterMsg</div>
+    }
+    <form asp-action="Login" asp-controller="Home">
+        <div>
+            <label>Email</label>
+            <input type="email" asp-for="Email" required/>
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" asp-for="Password" required/>
+        </div>
+        <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+</div>
